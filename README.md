@@ -71,4 +71,4 @@ ROOT (root_path)
 이 프로젝트에서는 아래 사용자의 코드를 참고하였습니다.
 
 - [ultralytics](https://github.com/ultralytics/ultralytics)
-- [DM-Count][https://github.com/cvlab-stonybrook/DM-Count]
+- [DM-Count](https://github.com/cvlab-stonybrook/DM-Count)
