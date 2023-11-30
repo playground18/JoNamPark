@@ -68,3 +68,10 @@ ROOT (root_path)
 	├ accuracy.py (main code)
 	└ accuracy_plotting.py (plot생성에 필요한 코드)
 ```
+
+## 사용한 코드
+
+이 프로젝트에서는 아래 사용자의 코드를 참고하였습니다.
+
+- [ultralytics](https://github.com/ultralytics/ultralytics)
+- [DM-Count][https://github.com/cvlab-stonybrook/DM-Count]
