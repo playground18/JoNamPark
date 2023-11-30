@@ -7,7 +7,7 @@ import numpy as np
 import os
 from DM_Count.models import vgg19
 import pandas as pd
-from accuracy_plotting import count_plot
+from accuracy_plotting import count_plot, accuracy_plot
 
 
 #아래 설정들을 바꿔서 테스트할 수 있습니다.
@@ -168,3 +168,4 @@ with open(csv_paths_list_path, 'w') as f:
 		f.write(f'{images_folders[i]},{csv_paths[i]}\n')
 
 count_plot(csv_paths, result_folder)
+accuracy_plot(csv_paths, result_folder)
