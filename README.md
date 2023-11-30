@@ -26,8 +26,8 @@ device = torch.device('cpu')
 
 
 ## directory structure example
-
- ROOT (root_path)
+```
+ROOT (root_path)
 	├ DM_Count	
 	│	├ models.py (using vgg19)
 	│	└ pretrained_models/{dm_count model} (model_path)
@@ -67,4 +67,4 @@ device = torch.device('cpu')
 	│	
 	├ accuracy.py (main code)
 	└ accuracy_plotting.py (plot생성에 필요한 코드)
-
+```
