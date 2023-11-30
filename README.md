@@ -23,9 +23,6 @@ device = torch.device('cpu')
 경로/옵션을 변경하여서 사용
 
 ## directory structure example
-
-
-## directory structure example
 ```
 ROOT (root_path)
 	├ DM_Count	
