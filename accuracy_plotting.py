@@ -42,15 +42,15 @@ def count_plot(csv_paths, result_folder):
             ax = axes[row, col]
         data2 = dm_count[folder]
         gt = ground_truth[folder]
-        ax.scatter(range(len(data)), data, color='orange')
-        ax.scatter(range(len(data2)), data2, color='green')
-        ax.plot(range(len(gt)), gt, color='black', marker = 'o',linewidth=0.5)
+        marker_size = 35 / len(data)
+        ax.plot(range(len(data)), data, color='orange',linewidth=0.5,marker = 'o', markersize = marker_size)
+        ax.plot(range(len(data2)), data2, color='green',linewidth=0.5,marker = 'o', markersize = marker_size)
+        ax.plot(range(len(gt)), gt, color='black',linewidth=0.5,marker = 'o', markersize = marker_size)
         ax.set_ylabel('Count')
         ax.set_xlabel('images')
         ax.set_title(folder)
-        ax.set_xticks(range(len(data)))
-        ax.set_xticklabels(range(1,len(data)+1, (len(data)+1)//10))
-        for i in range(len(gt)): ax.axvline(x=i, linestyle='--', color='gray',linewidth=0.5)
+        ax.set_xticks(range(0,len(data),len(data)//10))
+        ax.set_xticklabels(range(1,len(data)+1, (len(data)+1)//10),rotation=45)
 
 
 
@@ -78,8 +78,8 @@ def accuracy_plot(csv_paths, result_folder):
         df = pd.read_csv(csv_path)
 
         # 각 모델별 정확도 계산
-        yolo_accuracy = abs(1-((df['ground_truth'] - df['yolo'])/df['ground_truth'])).mean()*100
-        dm_count_accuracy = abs(1-((df['ground_truth'] - df['dm_count'])/df['ground_truth'])).mean()*100
+        yolo_accuracy = (1-(abs(df['ground_truth'] - df['yolo'])/df['ground_truth'])).mean()*100
+        dm_count_accuracy = (1-(abs(df['ground_truth'] - df['dm_count'])/df['ground_truth'])).mean()*100
 
 
         # 결과 저장
@@ -101,5 +101,4 @@ def accuracy_plot(csv_paths, result_folder):
     plt.legend()
 
 
-    plt.show()
     plt.savefig(result_folder+'accuracy.png')
